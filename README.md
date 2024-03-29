@@ -66,10 +66,10 @@ You can install these dependencies using pip:
 ## Usage
 
 1. Clone the repository:
-`git clone https://github.com/your-username/predictive-maintenance.git`
+`git clone https://github.com/Oluwaseun25/.git`
 
 2. Navigate to the project directory:
-`cd predictive-maintenance`
+`cd predictive-maintenance-supervised-learning`
 
 3. Run Jupyter notebooks for data analysis and model development:
 `jupyter lab`
