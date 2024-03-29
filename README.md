@@ -1,4 +1,4 @@
-### Predictive Maintenance with Supervised Learning
+# Predictive Maintenance with Supervised Learning
 
 ## Overview
 
@@ -24,29 +24,29 @@ The AI4I 2020 Predictive Maintenance Dataset from the UCI Machine Learning Repos
 
 The project follows a structured organization of files and directories:
 
-predictive_maintenance/
-│
-├── data/
-│   └── ai4i2020.csv
-│
-├── models/
-│   ├── machine_failure_prediction.py
-│   └── failure_type_detection.py
-│
-├── notebooks/
-│   └── exploratory_data_analysis.ipynb
-│
-├── README.md
-└── project_plan.md
+### predictive_maintenance/
 
-docs/
-│   ├── project_plan.md
-│   └── project_report.md
-│
-└── scripts/
-    ├── data_preprocessing.py
-    ├── model_training.py
-    └── model_evaluation.py
+### data/
+- ai4i2020.csv
+
+### models/
+- machine_failure_prediction.py
+- failure_type_detection.py
+
+### notebooks/
+- exploratory_data_analysis.ipynb
+
+- README.md
+- project_plan.md
+
+### docs/
+- project_plan.md
+- project_report.md
+
+### scripts/
+    - data_preprocessing.py
+    - model_training.py
+    - model_evaluation.py
 
 
 ## Installation and Dependencies
