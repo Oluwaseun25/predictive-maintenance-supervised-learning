@@ -81,3 +81,5 @@ You can install these dependencies using pip:
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
+## REFRENCE
+`AI4I 2020 Predictive Maintenance Dataset. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5HS5C.`
