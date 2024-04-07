@@ -15,7 +15,7 @@ def preprocess_data(df):
     # Mapping the 'Failure Type' column using the predefined dictionary
     df['Failure Type'] = df['Failure Type'].map(cause_dict)
     
-    # Apply one-hot encoding to the 'Type' column
+    # Apply One-hot encoding to the 'Type' column
     encoder = OneHotEncoder(drop='first')
     type_encoded = encoder.fit_transform(df[['Type']]).toarray()
     type_columns = encoder.get_feature_names_out(['Type'])
@@ -41,6 +41,7 @@ def preprocess_data(df):
     df_encoded[numerical_features] = scaler.fit_transform(df_encoded[numerical_features])
 
     return df_encoded
+
 def split_data(df):
     X = df.drop(columns=['Machine failure', 'Failure Type'])
     y = df[['Machine failure', 'Failure Type']]
