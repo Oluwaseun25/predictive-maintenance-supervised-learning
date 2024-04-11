@@ -29,3 +29,16 @@ def eval_preds(model, X, y_true, y_pred, task):
     metrics = round(metrics,3)
     return cm, metrics
 
+def predict_and_evaluate(fitted_models, X, y_true, clf_str, task):
+    cm_dict = {key: np.nan for key in clf_str}
+    metrics = pd.DataFrame(columns=clf_str)
+    y_pred = pd.DataFrame(columns=clf_str)
+    for fit_model, model_name in zip(fitted_models,clf_str):
+        y_pred[model_name] = fit_model.predict(X)
+        if task == 'binary':
+            cm, scores = eval_preds(fit_model, X, y_true, y_pred[model_name], task)
+        elif task == 'multi_class':
+            cm, scores = eval_preds(fit_model, X, y_true, y_pred[model_name], task)
+        cm_dict[model_name] = cm
+        metrics[model_name] = scores
+    return y_pred, cm_dict, metrics
