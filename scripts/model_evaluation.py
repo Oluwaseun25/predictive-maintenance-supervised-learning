@@ -6,7 +6,7 @@ from sklearn.metrics import make_scorer
 
 def eval_preds(model, X, y_true, y_pred, task):
     if task == 'binary':
-        
+        y_true = y_true['Machine failure']
         cm = confusion_matrix(y_true, y_pred)
         proba = model.predict_proba(X)[:,1]
         acc = accuracy_score(y_true, y_pred)
@@ -16,7 +16,7 @@ def eval_preds(model, X, y_true, y_pred, task):
         recall = recall_score(y_true, y_pred)
         precision = precision_score(y_true, y_pred)
     elif task == 'multi_class':
-        
+        y_true = y_true['Failure Type']
         cm = confusion_matrix(y_true, y_pred)
         proba = model.predict_proba(X)
         acc = accuracy_score(y_true, y_pred)
@@ -56,3 +56,5 @@ def predict_and_evaluate(fitted_models, X, y_true, clf_str, task):
         cm_dict[model_name] = cm
         metrics.loc[model_name] = scores
     return y_pred, cm_dict, metrics
+
+
